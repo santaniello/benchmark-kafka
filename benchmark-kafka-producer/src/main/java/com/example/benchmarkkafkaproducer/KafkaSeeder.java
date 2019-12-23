@@ -8,8 +8,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import java.util.HashSet;
-import java.util.Set;
 
 @Component
 public class KafkaSeeder implements CommandLineRunner {
@@ -23,7 +21,7 @@ public class KafkaSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args)  {
-        for(int x = 0; x < 500; x++){
+        for(int x = 0; x < 50; x++){
             Order order = Order.getInstance();
             producer.sendOrder(orderToJson(order));
             OrderItem orderItem = OrderItem.getInstance(order);
