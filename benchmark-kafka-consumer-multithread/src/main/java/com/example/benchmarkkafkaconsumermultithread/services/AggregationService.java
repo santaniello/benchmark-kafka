@@ -37,13 +37,6 @@ public class AggregationService {
                 orderItemRepository.deleteById(oI.getIdOrderItem());
             }
         });
-        //if(orders.size() > 0) {
-           // orders.forEach(order -> {
-              //  List<OrderItem> itens = orderItemRepository.findByIdOrder(order.getIdOrder());
-              //  if(itens != null && itens.size() > 0) {
-              //  }
-           // });
-        //}
         log.info("Ending Aggregation");
     }
 
