@@ -1,4 +1,4 @@
-package com.example.benchmarkkafkaconsumerreactive.models;
+package com.example.benchmarkkafkaconsumermultithread.models;
 
 import lombok.Getter;
 

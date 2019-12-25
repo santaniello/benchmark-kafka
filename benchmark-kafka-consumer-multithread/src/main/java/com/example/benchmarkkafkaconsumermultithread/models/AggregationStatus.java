@@ -1,4 +1,4 @@
-package com.example.benchmarkkafkaconsumerreactive.models;
+package com.example.benchmarkkafkaconsumermultithread.models;
 
 public enum AggregationStatus {
     PENDING,

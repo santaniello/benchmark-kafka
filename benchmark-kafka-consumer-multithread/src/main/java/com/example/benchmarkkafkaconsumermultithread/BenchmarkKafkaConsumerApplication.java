@@ -1,4 +1,4 @@
-package com.example.benchmarkkafkaconsumerreactive;
+package com.example.benchmarkkafkaconsumermultithread;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

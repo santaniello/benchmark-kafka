@@ -1,6 +1,6 @@
-package com.example.benchmarkkafkaconsumerreactive.services;
+package com.example.benchmarkkafkaconsumermultithread.services;
 
-import com.example.benchmarkkafkaconsumerreactive.models.CalculateTime;
+import com.example.benchmarkkafkaconsumermultithread.models.CalculateTime;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

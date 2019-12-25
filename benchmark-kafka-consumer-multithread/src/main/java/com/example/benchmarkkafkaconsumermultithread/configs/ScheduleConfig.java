@@ -1,4 +1,4 @@
-package com.example.benchmarkkafkaconsumerreactive.configs;
+package com.example.benchmarkkafkaconsumermultithread.configs;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;

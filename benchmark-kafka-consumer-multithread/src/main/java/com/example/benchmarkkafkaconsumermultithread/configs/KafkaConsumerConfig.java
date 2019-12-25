@@ -1,9 +1,8 @@
-package com.example.benchmarkkafkaconsumerreactive.configs;
+package com.example.benchmarkkafkaconsumermultithread.configs;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.benchmarkkafkaconsumerreactive.ListenerOrder;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.context.annotation.Bean;
