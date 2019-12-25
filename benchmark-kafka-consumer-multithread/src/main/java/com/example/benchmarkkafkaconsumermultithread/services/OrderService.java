@@ -6,6 +6,7 @@ import com.example.benchmarkkafkaconsumermultithread.repositories.OrderItemRepos
 import com.example.benchmarkkafkaconsumermultithread.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 
 import java.util.List;
 
@@ -19,13 +20,13 @@ public class OrderService {
     private OrderItemRepository orderItemRepository;
 
     public void saveOrder(Order order){
-        orderRepository.save(order);
+        orderRepository.save(order).subscribe();
     }
 
     public void saveOrderItem(OrderItem orderItem){
-        List<OrderItem> itens = orderItemRepository.findByIdOrder(orderItem.getIdOrder());
-        if(itens.size() == 0){
-            orderItemRepository.save(orderItem);
+        Flux<OrderItem> fluxItens = orderItemRepository.findByIdOrder(orderItem.getIdOrder());
+        if(fluxItens.blockFirst() == null){
+            orderItemRepository.save(orderItem).subscribe();
         }
     }
 }

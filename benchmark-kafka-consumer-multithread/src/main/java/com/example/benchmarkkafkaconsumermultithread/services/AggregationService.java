@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 
 import java.util.List;
 
@@ -28,16 +29,21 @@ public class AggregationService {
     @Scheduled(cron="0 0/1 * 1/1 * ?")
     public void aggregate(){
         log.info("Initializing Aggregation");
-        List<Order> orders = orderRepository.findByStatus(PENDING);
-        if(orders.size() > 0) {
-            orders.forEach(order -> {
-                List<OrderItem> itens = orderItemRepository.findByIdOrder(order.getIdOrder());
-                if(itens != null && itens.size() > 0) {
-                    updateItem(order, itens.get(0));
-                    orderItemRepository.deleteById(itens.get(0).getIdOrderItem());
-                }
-            });
-        }
+        Flux<Order> fluxOrders = orderRepository.findByStatus(PENDING);
+        fluxOrders.subscribe(o->{
+            OrderItem oI = orderItemRepository.findByIdOrder(o.getIdOrder()).blockFirst();
+            if(oI != null){
+                updateItem(o, oI);
+                orderItemRepository.deleteById(oI.getIdOrderItem());
+            }
+        });
+        //if(orders.size() > 0) {
+           // orders.forEach(order -> {
+              //  List<OrderItem> itens = orderItemRepository.findByIdOrder(order.getIdOrder());
+              //  if(itens != null && itens.size() > 0) {
+              //  }
+           // });
+        //}
         log.info("Ending Aggregation");
     }
 
