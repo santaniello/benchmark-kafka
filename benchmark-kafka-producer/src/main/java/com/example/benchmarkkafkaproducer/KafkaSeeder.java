@@ -21,7 +21,7 @@ public class KafkaSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args)  {
-        for(int x = 0; x < 50; x++){
+        for(int x = 0; x < 100000; x++){
             Order order = Order.getInstance();
             producer.sendOrder(orderToJson(order));
             OrderItem orderItem = OrderItem.getInstance(order);

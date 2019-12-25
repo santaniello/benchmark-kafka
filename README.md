@@ -1,0 +1,13 @@
+https://medium.com/@contactsunny/simple-apache-kafka-producer-and-consumer-using-spring-boot-41be672f4e2b
+https://medium.com/quick-code/how-to-start-with-spring-webflux-dc79b55271bf
+https://stackoverflow.com/questions/51653185/spring-kafka-multiple-consumer-for-single-topic-consume-different-messages
+https://www.baeldung.com/java-countdown-latch
+https://github.com/reactor/reactor-kafka/issues/100
+https://github.com/reactor/reactor-kafka/blob/master/reactor-kafka-samples/src/main/java/reactor/kafka/samples/SampleConsumer.java
+https://dzone.com/articles/magic-of-kafka-with-spring-boot
+https://medium.com/quick-code/how-to-start-with-spring-webflux-dc79b55271bf
+https://medium.com/thinkspecial/power-of-reactor-kafka-5df7cdef2bdd
+https://github.com/spring-projects/spring-kafka/blob/master/spring-kafka/src/main/java/org/springframework/kafka/core/reactive/ReactiveKafkaConsumerTemplate.java#L55
+https://spring.io/guides/gs/reactive-rest-service/
+https://objectpartners.com/2018/08/07/apache-kafka-and-reactive-spring-boot/
+https://howtoprogram.xyz/2016/09/25/spring-kafka-multi-threaded-message-consumption/

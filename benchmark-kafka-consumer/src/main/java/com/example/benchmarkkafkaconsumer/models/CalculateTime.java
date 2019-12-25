@@ -7,7 +7,6 @@ public class CalculateTime {
     private  long timeConsumeOrder;
     private  long timeConsumeOrderItem;
 
-
     public long getTime(){
        return System.currentTimeMillis();
     }

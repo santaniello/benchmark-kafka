@@ -22,10 +22,6 @@ public class Consumer {
 
     private ObjectMapper mapper = new ObjectMapper();
 
-    public static long timeConsumeOrder;
-
-    public static long timeConsumeOrderItem;
-
     private CalculateTime calculate = new CalculateTime();
 
     @KafkaListener(topics = "orders", groupId = "benchmark")
@@ -34,7 +30,7 @@ public class Consumer {
         log.info(String.format("$$ -> Consumed Message -> %s",message));
         var order = mapper.readValue(message, Order.class);
         order.setStatus(PENDING);
-        orderService.saveOrder(order);
+        //orderService.saveOrder(order);
         long endTime = calculate.getTime();
         calculate.sumTimeOrder(endTime - startTime);
         log.info("Actual time consumeOrders "+ calculate.getTimeConsumeOrder() + " in milliseconds!");
@@ -45,7 +41,7 @@ public class Consumer {
         long startTime = calculate.getTime();
         log.info(String.format("$$ -> Consumed Message -> %s",message));
         var orderItem = mapper.readValue(message, OrderItem.class);
-        orderService.saveOrderItem(orderItem);
+        //orderService.saveOrderItem(orderItem);
         long endTime = calculate.getTime();
         calculate.sumTimeOrderItem(endTime - startTime);
         log.info("Actual time consumeItens "+ calculate.getTimeConsumeOrderItem() + " in milliseconds!");
