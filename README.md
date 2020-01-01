@@ -11,3 +11,4 @@ https://github.com/spring-projects/spring-kafka/blob/master/spring-kafka/src/mai
 https://spring.io/guides/gs/reactive-rest-service/
 https://objectpartners.com/2018/08/07/apache-kafka-and-reactive-spring-boot/
 https://howtoprogram.xyz/2016/09/25/spring-kafka-multi-threaded-message-consumption/
+https://www.reactiveprogramming.be/an-introduction-to-reactor-kafka/
