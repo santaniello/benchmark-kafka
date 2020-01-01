@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+benchmark:
+  kafka:
+    bootstrapServers: localhost:9092
+    groupId: benchmark
+    auto-offset-reset: earliest
+    keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
+    valueDeserializer: org.apache.kafka.common.serialization.StringDeserializer
+    keySerializer: org.apache.kafka.common.serialization.StringDeserializer
+    valueSerializer: org.apache.kafka.common.serialization.StringDeserializer
+    topics:
+    - name: "orders"
+      mapclass: "br.com"
+      enabled: true
+    - name: "itens"
+      mapclass: "br.com.java"
+      enabled: true
+
+spring:
+  enable:
+    scheduling: false
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/benchmark-kafka
+#  kafka:
+#    consumer:
+#      bootstrap-servers: localhost:9092
+#      group-id: benchmark
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
